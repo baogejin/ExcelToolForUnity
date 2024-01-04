@@ -1,0 +1,7 @@
+{
+    "Global":[
+        {"Key":"AccountMaxLen","Value":20,"SlcValue":[[]],"StrValue":""},
+        {"Key":"RoleNameMinLen","Value":1,"SlcValue":[[]],"StrValue":""},
+        {"Key":"RoleNameMaxLen","Value":20,"SlcValue":[[]],"StrValue":""}
+    ]
+}
