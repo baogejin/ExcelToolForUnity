@@ -71,20 +71,19 @@ namespace GameData
         public static ExampleCfg Get()
         {
             if (_instance == null)
-            {
-                _instance = Create();
-            }
+                Init();
             return _instance;
         }
         public List<ExampleInfo> Example;
         private Dictionary<int, ExampleInfo> _ExampleDict;
         public List<AbbInfo> Abb;
         private Dictionary<int, AbbInfo> _AbbDict;
-        private static ExampleCfg Create()
+        private static void Init()
         {
             AssetHandle handle = YooAssets.LoadAssetSync<TextAsset>("Assets/GameRes/Json/Example");
             TextAsset text = handle.AssetObject as TextAsset;
-            return JsonConvert.DeserializeObject<ExampleCfg>(text.text);
+            _instance = JsonConvert.DeserializeObject<ExampleCfg>(text.text);
+            handle.Release();
         }
 
         private void InitDict()
