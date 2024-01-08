@@ -262,6 +262,10 @@ func (this *ExcelInfo) GenCSharpCode(path string) error {
 		ret += "            {\n"
 		ret += "                InitDict();\n"
 		ret += "            }\n"
+		ret += "            if (!_" + s.Name + "Dict.ContainsKey(id))\n"
+		ret += "            {\n"
+		ret += "                return null;\n"
+		ret += "            }\n"
 		ret += "            return _" + s.Name + "Dict[id];\n"
 		ret += "        }\n"
 	}
