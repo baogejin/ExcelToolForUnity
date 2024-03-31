@@ -11,7 +11,7 @@ func main() {
 	//生成代码
 	rootPath := "../"
 	excelPath := rootPath + "Excel"
-	jsonPath := rootPath + "Assets/GameRes/Json"
+	jsonPath := rootPath + "Assets/Resources/Json"
 	codePath := rootPath + "Assets/Scripts/Data/GenCode"
 	tag := "c" //c为客户端，s为服务器，unity项目默认c
 

@@ -187,7 +187,6 @@ func (this *ExcelInfo) GenCSharpCode(path string) error {
 	ret += "using Newtonsoft.Json;\n"
 	ret += "using System.Collections.Generic;\n"
 	ret += "using UnityEngine;\n"
-	ret += "using YooAsset;\n\n"
 	ret += "namespace GameData\n"
 	ret += "{\n"
 	needMap := make(map[string]bool)
@@ -234,10 +233,8 @@ func (this *ExcelInfo) GenCSharpCode(path string) error {
 	}
 	ret += "        private static void Init()\n"
 	ret += "        {\n"
-	ret += "            AssetHandle handle = YooAssets.LoadAssetSync<TextAsset>(\"Assets/GameRes/Json/" + this.Name + "\");\n"
-	ret += "            TextAsset text = handle.AssetObject as TextAsset;\n"
+	ret += "            TextAsset text = Resources.Load<TextAsset>(\"Json/" + this.Name + "\");\n"
 	ret += "            _instance = JsonConvert.DeserializeObject<" + this.Name + "Cfg>(text.text);\n"
-	ret += "            handle.Release();\n"
 	ret += "        }\n\n"
 	ret += "        private void InitDict()\n"
 	ret += "        {\n"
