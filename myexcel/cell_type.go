@@ -58,7 +58,7 @@ func (this *TypeInfo) ParseToJson(str string) (string, error) {
 		return ret, nil
 	case CellTypeDoubleSlc:
 		if str == "" {
-			return "[[]]", nil
+			return "[]", nil
 		}
 		ret := "["
 		s1 := strings.Split(str, "|")
