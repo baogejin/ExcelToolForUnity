@@ -158,6 +158,7 @@ func (this *SheetInfo) ToJson() (string, error) {
 			cellStr := "\"" + this.Varnames[j] + "\":"
 			vStr, err := this.Types[j].ParseToJson(cell)
 			if err != nil {
+				fmt.Println(this.Name + " ID:" + row[0] + ",content:" + cell)
 				return "", err
 			}
 			if needCheck && j == 0 {
