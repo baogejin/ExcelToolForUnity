@@ -198,7 +198,7 @@ func (this *ExcelInfo) GenCSharpCode(path string) error {
 		if s.Varnames[0] == "ID" && s.Types[0].CType == CellTypeSimple && s.Types[0].ValueType1 == "int32" {
 			needMap[s.Name] = true
 		}
-		ret += "    public class " + s.Name + "Info\n"
+		ret += "    public partial class " + s.Name + "Info\n"
 		ret += "    {\n"
 		for i := range s.Varnames {
 			ret += "        /// <summary>\n"
